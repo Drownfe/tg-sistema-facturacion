@@ -8,20 +8,16 @@ El sistema debe permitir crear, consultar, editar y eliminar clientes.
 **RF-02. Gestión de productos/servicios**
 El sistema debe permitir crear, consultar, editar y eliminar productos/servicios.
 
-**RF-03. Creación de factura**
+**RF-03. Creación de factura con ítems**
 El sistema debe permitir crear una factura asociando un cliente y agregando ítems (producto/servicio), cantidad y precio unitario.
 
 **RF-04. Cálculo de totales**
 El sistema debe calcular subtotal y total de la factura (según reglas definidas).
 
-**RF-05. Exportación de factura**
+**RF-05. Exportación de factura a PDF**
 El sistema debe permitir exportar la factura a PDF con un formato consistente.
+> Nota de alcance: En esta versión del Trabajo de Grado se prioriza el núcleo del sistema (clientes, productos/servicios y factura con exportación a PDF). Funcionalidades como historial detallado, reportes avanzados, inventario completo o renovaciones se consideran fuera de alcance.
 
-**RF-06. Historial de facturas**
-El sistema debe permitir consultar el listado de facturas y abrir una factura existente para visualizarla y/o re-exportarla.
-
-**RF-07. Reportes básicos**
-El sistema debe permitir consultar reportes básicos (por periodo y totales).
 
 ## 2. Requisitos no funcionales (RNF)
 
