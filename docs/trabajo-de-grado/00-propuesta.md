@@ -10,7 +10,7 @@ En micro y pequeñas empresas es común que la facturación y el control de info
 La ausencia de una herramienta unificada para gestionar clientes, productos/servicios y facturación dificulta el control operativo y la consulta de información histórica (facturas y reportes), aumentando el tiempo invertido y la probabilidad de errores.
 
 ## Objetivo general
-Desarrollar una aplicación de escritorio que permita gestionar clientes y productos/servicios, generar facturas en PDF y consultar reportes básicos, aplicando un proceso de ingeniería de software.
+Desarrollar una aplicación de escritorio que permita gestionar clientes y productos/servicios, generar facturas en PDF, aplicando un proceso de ingeniería de software.
 
 ## Objetivos específicos
 1. Levantar y especificar requisitos funcionales y no funcionales del sistema.
@@ -24,15 +24,15 @@ Desarrollar una aplicación de escritorio que permita gestionar clientes y produ
 Incluye:
 - CRUD de clientes.
 - CRUD de productos/servicios.
-- Creación de facturas con ítems, cantidades y precios.
+- Creación de facturas (cliente + ítems + cantidades + precios + totales).
 - Exportación de factura a PDF.
-- Consulta de historial de facturas.
-- Reportes básicos (por periodo y totales).
 
 No incluye:
 - Integraciones contables o con DIAN.
 - Facturación electrónica.
 - Módulos avanzados tipo ERP (inventario completo, nómina, contabilidad).
+- Reportes avanzados y analítica.
+- Gestión de inventario completa.
 
 ## Metodología (borrador)
 Trabajo incremental por iteraciones (sprints):
