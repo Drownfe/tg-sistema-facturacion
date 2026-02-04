@@ -34,6 +34,8 @@
 - total
 - observaciones (opcional)
 - creado_en
+- pdf_path
+> Nota: El sistema almacena la información mínima para reconstruir la factura y generar el PDF cuando se requiera. La consulta histórica avanzada queda fuera de alcance.
 
 ### DetalleFactura
 - id (PK)
