@@ -4,17 +4,18 @@
 La solución se plantea como una aplicación de escritorio con persistencia local, organizada por módulos para facilitar mantenimiento y pruebas.
 
 ## 2. Componentes principales (v0)
-- **UI (Presentación):** pantallas y formularios para clientes, productos/servicios, facturación, historial y reportes.
-- **Servicios / Lógica de negocio:** validaciones, cálculo de totales, reglas de factura, generación de reportes.
-- **Datos / Persistencia:** acceso a base de datos local (CRUD y consultas).
-- **Exportación PDF:** generación de documentos (facturas) con formato estándar.
+- **UI (Presentación)**: pantallas para Clientes, Productos/Servicios y Facturación.
+- **Lógica de negocio**: validaciones y cálculo de totales.
+- **Persistencia**: base de datos local (CRUD y consultas mínimas).
+- **Exportación PDF**: generación de la factura en PDF con formato estándar.
 
 ## 3. Flujo principal (v0)
-1. Usuario registra/selecciona cliente.
-2. Usuario registra/selecciona productos/servicios.
-3. Usuario crea factura, agrega ítems, valida y calcula totales.
-4. Usuario exporta la factura a PDF.
-5. El sistema guarda la factura para consulta en historial.
+1. Crear/seleccionar cliente
+2. Crear/seleccionar productos/servicios
+3. Crear factura (ítems + totales)
+4. Exportar PDF
+5. Guardar factura (solo si lo manejas como “persistir factura” — sin hablar de historial/reportes)
+6. Riesgos
 
 ## 4. Decisiones iniciales
 - Persistencia local para operación simple y sin dependencia de internet.
