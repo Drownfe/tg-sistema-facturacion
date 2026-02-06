@@ -89,3 +89,8 @@ Fuera de alcance:
 - Capturas de pantalla de cada caso de prueba (antes/después).
 - Carpeta con PDFs generados (nombres consistentes).
 - Registro de resultados (aprobado/fallido + observaciones).
+
+## 7. Trazabilidad (RF → Casos de prueba)
+- RF Clientes (CRUD) → CP-C01, CP-C02, CP-C03, CP-C04
+- RF Productos/Servicios (CRUD) → CP-P01, CP-P02, CP-P03, CP-P04
+- RF Facturación (crear + totales + PDF) → CP-F01, CP-F02, CP-F03, CP-F04, CP-F05
