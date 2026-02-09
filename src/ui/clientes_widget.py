@@ -5,7 +5,7 @@ from PySide6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout,
     QLineEdit, QPushButton, QMessageBox, QTableWidget, QTableWidgetItem, QLabel
 )
-
+from PySide6.QtWidgets import QDialog
 from src.data.clientes_repo import (
     Cliente, listar_clientes, crear_cliente, actualizar_cliente, eliminar_cliente
 )
@@ -113,7 +113,7 @@ class ClientesWidget(QWidget):
 
     def on_new(self) -> None:
         dlg = ClienteDialog(self, None)
-        if dlg.exec() == dlg.Accepted:
+        if dlg.exec() == QDialog.Accepted:
             try:
                 crear_cliente(dlg.get_cliente())
                 self.refrescar_tabla()
@@ -127,7 +127,7 @@ class ClientesWidget(QWidget):
             return
 
         dlg = ClienteDialog(self, c)
-        if dlg.exec() == dlg.Accepted:
+        if dlg.exec() == QDialog.Accepted:
             try:
                 actualizar_cliente(dlg.get_cliente())
                 self.refrescar_tabla()
