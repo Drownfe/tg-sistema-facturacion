@@ -14,3 +14,9 @@
 ## Pendiente (próximos pasos)
 - Ajustar título, alcance y cronograma según lineamientos del asesor.
 - Definir arquitectura v0 (capas/módulos) y modelo de datos v0.
+
+## Semana 2
+Fecha: 2026-02-10 (martes)
+- Se implementó módulo Productos/Servicios: tabla productos, repo CRUD con precio_cliente, precio_entidad (default 0), notas, cálculo automático de profit.
+- Se agregó vista Products con buscador + modales New/Edit/Delete + profit en tabla.
+- Se corrigió duplicado de commit (reset/force-with-lease).
