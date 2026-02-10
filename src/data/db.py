@@ -56,3 +56,17 @@ def init_db() -> None:
             """
         )
         conn.commit()
+
+        conn.execute(
+            """
+            CREATE TABLE IF NOT EXISTS productos (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                nombre TEXT NOT NULL,
+                notas TEXT,
+                precio_cliente REAL NOT NULL,
+                precio_entidad REAL NOT NULL DEFAULT 0,
+                creado_en TEXT NOT NULL DEFAULT (datetime('now'))
+            );
+            """
+        )
+
