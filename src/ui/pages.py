@@ -28,8 +28,18 @@ class ProductsPage(QWidget):
 class InvoicesPage(QWidget):
     def __init__(self) -> None:
         super().__init__()
+        
+        title = QLabel("Invoices")
+        title.setStyleSheet("font-size: 18px; font-weight: 700;")
+
+        subtitle = QLabel("En construcción (pendiente lógica de facturación + PDF).")
+        subtitle.setStyleSheet("opacity: 0.8;")
+
         layout = QVBoxLayout()
-        label = QLabel("Invoices - En Construccion")
-        label.setAlignment(Qt.AlignCenter)
-        layout.addWidget(label)
+        layout.setContentsMargins(16, 16, 16, 16)
+        layout.setSpacing(8)
+        layout.addWidget(title)
+        layout.addWidget(subtitle)
+        layout.addStretch()
+        
         self.setLayout(layout)
