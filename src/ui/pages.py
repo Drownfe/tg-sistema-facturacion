@@ -29,7 +29,7 @@ class InvoicesPage(QWidget):
     def __init__(self) -> None:
         super().__init__()
         layout = QVBoxLayout()
-        label = QLabel("Invoices (pendiente)")
+        label = QLabel("Invoices - En Construccion")
         label.setAlignment(Qt.AlignCenter)
         layout.addWidget(label)
         self.setLayout(layout)

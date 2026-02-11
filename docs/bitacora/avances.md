@@ -20,3 +20,7 @@ Fecha: 2026-02-10 (martes)
 - Se implementó módulo Productos/Servicios: tabla productos, repo CRUD con precio_cliente, precio_entidad (default 0), notas, cálculo automático de profit.
 - Se agregó vista Products con buscador + modales New/Edit/Delete + profit en tabla.
 - Se corrigió duplicado de commit (reset/force-with-lease).
+
+ 2026-02-11 (Miercoles)
+ - Productos listo (UI + repo + DB + profit).
+ - Estado actual: módulos completos = Clientes, Productos; siguiente = Facturación.

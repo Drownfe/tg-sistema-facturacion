@@ -22,10 +22,10 @@ Desarrollar una aplicación de escritorio que permita gestionar clientes y produ
 
 ## Alcance (borrador)
 Incluye:
-- CRUD de clientes.
-- CRUD de productos/servicios.
-- Creación de facturas (cliente + ítems + cantidades + precios + totales).
-- Exportación de factura a PDF.
+ - Gestión de Clientes (CRUD + búsqueda).
+ - Gestión de Productos/Servicios (CRUD + búsqueda + campos: precio cliente, precio entidad, notas, profit calculado).
+ - Facturación: crear factura, seleccionar cliente, agregar ítems, calcular totales.
+ - Generación de PDF de la factura
 
 No incluye:
 - Integraciones contables o con DIAN.
