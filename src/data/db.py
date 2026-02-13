@@ -76,14 +76,20 @@ def init_db() -> None:
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 cliente_id INTEGER NOT NULL,
                 fecha TEXT NOT NULL DEFAULT (date('now')),
-                subtotal REAL NOT NULL DEFAULT 0,
-                total REAL NOT NULL DEFAULT 0,
                 notas TEXT,
+
+                subtotal REAL NOT NULL DEFAULT 0,
+                discount REAL NOT NULL DEFAULT 0,
+                agent_fee REAL NOT NULL DEFAULT 0,
+                support_fee REAL NOT NULL DEFAULT 0,
+                total REAL NOT NULL DEFAULT 0,
+
                 creado_en TEXT NOT NULL DEFAULT (datetime('now')),
                 FOREIGN KEY (cliente_id) REFERENCES clientes(id)
             );
             """
         )
+
 
         conn.execute(
             """
