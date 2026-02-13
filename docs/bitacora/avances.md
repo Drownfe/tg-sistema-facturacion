@@ -24,3 +24,14 @@ Fecha: 2026-02-10 (martes)
  2026-02-11 (Miercoles)
  - Productos listo (UI + repo + DB + profit).
  - Estado actual: módulos completos = Clientes, Productos; siguiente = Facturación.
+
+ ## 2026-02-13
+
+- Se avanzó módulo de Facturación (backend):
+  - Estructura de BD: facturas + factura_items.
+  - Reglas de cálculo: subtotal por ítems, descuento (discount) y fees (agent_fee, support_fee) → total.
+  - Scripts de prueba para poblar y validar cálculo.
+- Estado actual:
+  - Clientes: UI + CRUD + búsqueda (OK).
+  - Productos/Servicios: UI + CRUD + búsqueda + profit (OK).
+  - Facturación: backend v2 (OK). UI y PDF pendientes para siguiente sprint.

@@ -24,3 +24,13 @@ Objetivo: iniciar desarrollo (Sprint 1) con el módulo Clientes.
 - ¿Alguna sección del formato institucional requiere un ajuste específico?
 - ¿Recomienda incluir numeración de requisitos y trazabilidad (RF ↔ casos de prueba)?
 - ¿Algún estándar de documentación/diagramas que prefiera (UML simple, entidad-relación)?
+
+## Estado del desarrollo (al 2026-02-13)
+
+- Clientes: Implementado (UI + CRUD + validaciones básicas).
+- Productos/Servicios: Implementado (UI + CRUD + cálculo profit).
+- Facturación:
+  - Backend implementado: BD + repos + cálculo de total con discount/fees.
+  - Pendiente: UI de Invoices y generación de PDF.
+- Próximo sprint: UI Invoices (crear/guardar factura + items) y luego PDF.
+
