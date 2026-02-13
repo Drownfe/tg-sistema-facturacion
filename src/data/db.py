@@ -70,3 +70,35 @@ def init_db() -> None:
             """
         )
 
+        conn.execute(
+            """
+            CREATE TABLE IF NOT EXISTS facturas (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                cliente_id INTEGER NOT NULL,
+                fecha TEXT NOT NULL DEFAULT (date('now')),
+                subtotal REAL NOT NULL DEFAULT 0,
+                total REAL NOT NULL DEFAULT 0,
+                notas TEXT,
+                creado_en TEXT NOT NULL DEFAULT (datetime('now')),
+                FOREIGN KEY (cliente_id) REFERENCES clientes(id)
+            );
+            """
+        )
+
+        conn.execute(
+            """
+            CREATE TABLE IF NOT EXISTS factura_items (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                factura_id INTEGER NOT NULL,
+                producto_id INTEGER NOT NULL,
+                descripcion TEXT,
+                cantidad REAL NOT NULL DEFAULT 1,
+                precio_unitario REAL NOT NULL,
+                total_linea REAL NOT NULL,
+                FOREIGN KEY (factura_id) REFERENCES facturas(id),
+                FOREIGN KEY (producto_id) REFERENCES productos(id)
+            );
+            """
+        )
+
+
