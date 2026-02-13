@@ -12,8 +12,12 @@ class Factura:
     cliente_id: int
     fecha: str
     subtotal: float
+    discount: float
+    agent_fee: float
+    support_fee: float
     total: float
     notas: Optional[str] = None
+
 
 
 @dataclass
@@ -98,30 +102,50 @@ def recalcular_totales(factura_id: int) -> None:
         ).fetchone()
 
         subtotal = float(row["subtotal"]) if row else 0.0
-        total = subtotal  # por ahora sin impuestos/descuentos (TG básico)
+
+        fees = conn.execute(
+            "SELECT discount, agent_fee, support_fee FROM facturas WHERE id = ?",
+            (factura_id,),
+        ).fetchone()
+
+        discount = float(fees["discount"] or 0)
+        agent_fee = float(fees["agent_fee"] or 0)
+        support_fee = float(fees["support_fee"] or 0)
+
+        total = subtotal - discount + agent_fee + support_fee
 
         conn.execute(
             "UPDATE facturas SET subtotal = ?, total = ? WHERE id = ?",
             (subtotal, total, factura_id),
         )
-        conn.commit()
+
 
 
 def obtener_factura(factura_id: int) -> Factura:
     with get_connection() as conn:
         row = conn.execute(
-            "SELECT id, cliente_id, fecha, subtotal, total, notas FROM facturas WHERE id = ?",
+            """
+            SELECT id, cliente_id, fecha, subtotal, discount, agent_fee, support_fee, total, notas
+            FROM facturas
+            WHERE id = ?
+            """,
             (factura_id,),
         ).fetchone()
+
+
 
     if not row:
         raise ValueError("Factura no encontrada.")
 
     return Factura(
-        id=row["id"],
-        cliente_id=row["cliente_id"],
-        fecha=row["fecha"],
-        subtotal=float(row["subtotal"]),
-        total=float(row["total"]),
-        notas=row["notas"],
-    )
+    id=row["id"],
+    cliente_id=row["cliente_id"],
+    fecha=row["fecha"],
+    subtotal=float(row["subtotal"]),
+    discount=float(row["discount"]),
+    agent_fee=float(row["agent_fee"]),
+    support_fee=float(row["support_fee"]),
+    total=float(row["total"]),
+    notas=row["notas"],
+)
+
